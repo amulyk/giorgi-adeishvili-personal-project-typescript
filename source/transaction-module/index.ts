@@ -1,5 +1,4 @@
 import { ScenarioInterface } from "./schema";
-// import { LogsInterface } from "./schema";
 import { LogInterface } from "./schema";
 export class Transaction {
     public scenario: ScenarioInterface;
@@ -23,12 +22,9 @@ export class Transaction {
                 count = 0;
             }
             try {
-                // let logObj: object = {};
                 if (this.scenario[count].index === id[i]) {
-                const index: number = this.scenario[count].index;
                 const storeBefore: object = this.scenario[count];
                 const storeAfter: object = await this.scenario[count].call(this.scenario);
-                const meta: object = this.scenario[count].meta;
                 const error = null;
                 this.log = {
                     error: {error},
@@ -76,10 +72,8 @@ export class Transaction {
                                         }
 
                                         const restore = await rest.restore(rest);
-                                        // const index = this.scenario[count].index;
                                         const storeBefore = this.scenario[count];
                                         const storeAfter = restore;
-                                        // const meta = this.scenario[count].meta;
                                         this.store = {};
                                         this.log = {
                                             error: null,
@@ -105,8 +99,6 @@ export class Transaction {
                         await scenario[count].call(this.scenario);
                         count++;
                         } catch {
-                            const index = this.scenario[count].index;
-                            const meta = this.scenario[count].meta;
                             const name = err.name;
                             const message = err.message;
                             const error = {name, message, stack: err};

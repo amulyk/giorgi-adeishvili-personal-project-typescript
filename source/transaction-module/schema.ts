@@ -11,18 +11,6 @@ export interface ScenarioInterface {
     };
 }
 
-// export interface LogsInterface {
-//     [index: number]: {
-//         error: object,
-//         index: number,
-//         meta: {
-//             title: string,
-//             description: string,
-//         },
-//         storeAfter?: object,
-//         storeBefore?: object,
-//     };
-// }
 export interface LogInterface  {
         error?: null | object;
         index?: number;
