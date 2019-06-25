@@ -44,8 +44,6 @@ export class Transaction {
                         throw err;
                     }
                     if (!scenario[count].silent || scenario[count].silent === undefined) {
-                        // const index = this.scenario[count].index;
-                        // const meta = this.scenario[count].meta;
                         const name = err.name;
                         const message = err.message;
                         const stack = err;
@@ -70,7 +68,6 @@ export class Transaction {
                                         if (!rest.restore) {
                                             throw new Error();
                                         }
-
                                         const restore = await rest.restore(rest);
                                         const storeBefore = this.scenario[count];
                                         const storeAfter = restore;
