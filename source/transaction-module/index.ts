@@ -2,7 +2,7 @@ import { ScenarioInterface } from "./schema";
 import { LogInterface } from "./schema";
 export class Transaction {
     public scenario: ScenarioInterface;
-    public store: object;
+    public store: object | null;
     public logs: LogInterface[];
     public log: LogInterface;
 
